@@ -1,0 +1,28 @@
+package com.tcs.loanapp.controller;
+
+import com.tcs.loanapp.model.Customer;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.*;
+
+@RestController
+@RequestMapping("/api/loans")
+public class LoanController {
+
+    List<Customer> mockDB = new ArrayList<>();
+
+    @PostMapping("/apply")
+    public String applyLoan(@RequestBody Customer customer) {
+        if (customer.getCreditScore() < 650) {
+            return "Loan application rejected due to low credit score.";
+        } else {
+            mockDB.add(customer);
+            return "Loan application submitted successfully.";
+        }
+    }
+
+    @GetMapping("/all")
+    public List<Customer> getAllApplications() {
+        return mockDB;
+    }
+}
