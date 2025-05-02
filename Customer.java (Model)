@@ -1,0 +1,30 @@
+package com.tcs.loanapp.model;
+
+public class Customer {
+    private int id;
+    private String name;
+    private int creditScore;
+    private double loanAmount;
+
+    // Constructors
+    public Customer() {}
+    public Customer(int id, String name, int creditScore, double loanAmount) {
+        this.id = id;
+        this.name = name;
+        this.creditScore = creditScore;
+        this.loanAmount = loanAmount;
+    }
+
+    // Getters and Setters
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public int getCreditScore() { return creditScore; }
+    public void setCreditScore(int creditScore) { this.creditScore = creditScore; }
+
+    public double getLoanAmount() { return loanAmount; }
+    public void setLoanAmount(double loanAmount) { this.loanAmount = loanAmount; }
+}
